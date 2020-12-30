@@ -1,0 +1,3 @@
+These are examples for executing code at boot, which is located in the boot sector of a USB-Pendrive or Floppydisk etc.
+
+Note that everything runs in a Virtualbox-VM but just the ones named with a 'b' (e.g. "03b_Hello_Bootloader") will run on real hardware.

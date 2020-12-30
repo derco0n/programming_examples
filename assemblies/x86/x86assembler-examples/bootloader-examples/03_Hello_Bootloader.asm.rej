@@ -1,0 +1,12 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 41
+- hang
+--- 49 -----
++ hang:
+***************
+*** 47
+- cat db "Hello Bootloader...", 0
+--- 55 -----
++ sometext db "Hello Bootloader...", 0
