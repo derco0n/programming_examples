@@ -1,4 +1,6 @@
 #pragma once
+//Diese Headerdatei beschreibt(deklariert) eine Rechteck - Klasse welche von Quadrat erbt.
+
 #include "Quadrat.h"
 class Rechteck : public Quadrat
     {
@@ -6,7 +8,7 @@ class Rechteck : public Quadrat
 
 
     protected:
-        double _width;
+        double _width;  //Zusätzliche Eigenschaft eine Rechtecks (Breite und Länge können unterschiedlcih sein)
 
 
     public:
@@ -16,26 +18,19 @@ class Rechteck : public Quadrat
         /// <param name="length"></param>
         /// <param name="width"></param>
         /// <returns></returns>
-        Rechteck(double length, double width):Quadrat(length)  //Constructor
-        {
-            this->_width = width;
-        }
+        Rechteck(double length, double width);
 
         /// <summary>
         /// Gibt den GrundUmfang des Rechtecks zurück
         /// </summary>
         /// <returns>GrundUmfang des Rechtecks</returns>
-        double GrundUmfang() override {
-            return 2 * this->_length + 2 * this->_width;
-        }
+        double GrundUmfang() override;
 
         /// <summary>
         /// Gibt die Fläche des Rechtecks zurück
         /// </summary>
         /// <returns>Fläche des Rechtecks</returns>
-        double GrundFlaeche() override {
-            return this->_width * this->_length;
-        }
+        double GrundFlaeche() override;
 
     };
 

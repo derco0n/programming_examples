@@ -4,7 +4,7 @@
 #include <iostream>
 //#include "Quadrat.h"
 //#include "Rechteck.h"
-#include "Quader.h"
+#include "Quader.h"  // Quader.h zu inkludieren reicht aus, das Quader alle Eigenschaften der Basisklassen enthält.
 
 int main()
 {

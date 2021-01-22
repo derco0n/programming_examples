@@ -1,4 +1,9 @@
 #pragma once
+//Diese Headerdatei beschreibt (deklariert) eine Quadrat-Klasse
+
+/// <summary>
+/// Definiert ein Quadrat
+/// </summary>
 class Quadrat
 {
 
@@ -8,26 +13,19 @@ protected:
 	double _length;
 
 public:
-	//Contructor
-	Quadrat(double length) {
-		this->_length = length;		
-	}
+	//Konstruktor
+	Quadrat(double length);
 
 	/// <summary>
 	/// Gibt den GrundUmfang des Quadrats zurück
 	/// </summary>
 	/// <returns>GrundUmfang</returns>
-	virtual double GrundUmfang() {
-		return this->_length * 4;
-	}
+	virtual double GrundUmfang();
 
 	/// <summary>
 	/// Gibt die GrundFlaeche des Quadrats zurück
 	/// </summary>
 	/// <returns></returns>
-	virtual double GrundFlaeche() {
-		return this->_length * this->_length;
-
-	}
+	virtual double GrundFlaeche();
 };
 
