@@ -5,7 +5,10 @@
 */
 #include <iostream> 
 #include <iomanip>  // This only used for proper hex-formatting. Nothing special here..
-#define SETTO 15  // This is a preprocessor instruction defining that the label "SETTO" means 15. It won't consume memory and is proccessed at compiletime
+
+// This is a preprocessor instruction defining that the label "SETTO" means 15.
+// It won't consume memory and is proccessed at compiletime
+#define SETTO 15
 
 using namespace std; 
 int main() 
@@ -18,9 +21,9 @@ int main()
         int * b = 0;
         int* b = 0;                
         int *b = 0; // This is how its usually written.
-        int *b; // <= but this would cause "b" to point to some random address which could be unsafe.
+        int *b; // <= this would cause "b" to point to some random address which might be unsafe.
         */
-        int* b = 0; // This is how its usually written. Make sure to initialize it with 0 as otherwise it points somewhere random
+        int *b = 0; // This is how its usually written. Make sure to initialize it with 0 as otherwise it points somewhere random
 
         cout << "\"b\" is initialized and now pointing to memory-address:  " << b << endl;        
         cout << endl;
