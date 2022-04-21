@@ -13,11 +13,21 @@ mov [BOOT_DRIVE], dl
 mov bp, 0x9000 ; set the stack's-basepointer to 0x9000
 mov sp, bp ; set the stack-pointer to it's current base-address
 
+call initdisp ; initializes the displaymode and cleares the display
+
+; print welcome messages
+mov si, dinited
+call printstr;
+
+mov si, bootloader
+call printstr;
+
 call load_kernel ; calls the function that loads the kernel
 call switch_to_32bit ;calls the function the switches to 32 BIT protected mode
 
 jmp $
 
+%include "initdisp.asm"
 %include "disk.asm"
 %include "gdt.asm"
 %include "switch-to-32bit.asm"
@@ -39,6 +49,11 @@ BEGIN_32BIT:
 
 ; boot drive variable
 BOOT_DRIVE db 0
+
+; Some Strings (including CR/LF and an completing NULL-Byte)
+bootloader db "Example-OS bootloader starting...", 0x0D, 0xA, 0x00
+dinited db "Basic display output initialized...", 0x0D, 0xA, 0x00
+
 
 ; In order to generate a valid master boot record, we need to include some padding
 ; by filling up the remaining space with 0 bytes times 510 - ($-$$) db 0 and the magic number dw 0xaa55
