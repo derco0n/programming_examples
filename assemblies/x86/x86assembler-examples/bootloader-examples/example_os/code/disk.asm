@@ -54,12 +54,21 @@ disk_load:
     ret
 
 disk_error:
-    ; Todo: Print out an error message instead of looping
+    ; Todo: Print out an error message instead of just looping
+    mov si, errord
+    call printstr;
     jmp disk_loop
 
 sectors_error:
-    ; Todo: Print out an error message instead of looping
+    ; Todo: Print out an error message instead of just looping
+    mov si, errors
+    call printstr;
     jmp disk_loop
 
 disk_loop:
     jmp $
+
+; Some Strings (including CR/LF and an completing NULL-Byte)
+errord db "Disk error: Unable to read from Disk!", 0x0D, 0xA, 0x00
+errors db "Disk error: Unable to read all sectors!", 0x0D, 0xA, 0x00
+
