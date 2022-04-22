@@ -35,6 +35,9 @@ jmp $
 [bits 16]
 load_kernel:
     ; loads the kernel from disk to RAM (specified address)
+    mov si, ldkernel
+    call printstr;
+
     mov bx, KERNEL_OFFSET ; bx -> destination (where to put the data)
     mov dh, 16             ; dh -> num sectors (how many sectors need to be read from disk)
     mov dl, [BOOT_DRIVE]  ; dl -> disk (from which drive should we load the data)
@@ -53,6 +56,7 @@ BOOT_DRIVE db 0
 ; Some Strings (including CR/LF and an completing NULL-Byte)
 bootloader db "Example-OS bootloader starting...", 0x0D, 0xA, 0x00
 dinited db "Basic display output initialized...", 0x0D, 0xA, 0x00
+ldkernel db "Loading kernel...", 0x0D, 0xA, 0x00
 
 
 ; In order to generate a valid master boot record, we need to include some padding
