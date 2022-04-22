@@ -14,10 +14,10 @@ It's purpose is to demonstrate how a BIOS-based x86-machine can boot up an opera
 - provide video-output using high-level code, as BIOS-calls are no longer useable in protected mode
 
 For a more feature-rich version of example-os you may look
-here: [FrOS -fork](https://github.com/derco0n/FrOS)
-or here: [FrOS - origin](https://github.com/FRosner/FrOS)
- 
-
+- here: [FrOS -fork](https://github.com/derco0n/FrOS)
+- here: [FrOS - origin](https://github.com/FRosner/FrOS)
+- here: [ShineOS based on FrOS -fork](https://github.com/derco0n/ShineOS)
+- here: [ShineOS based on FrOS](https://github.com/acteam-ux/ShineOS)
 
 ## Files
 - boot
