@@ -4,6 +4,20 @@ Based on the tutorial of https://dev.to/frosnerd/
 This is an example of an basic operating systemt, consisting of 
 - an bootloader starting a self-written kernel.
 
+It's purpose is to demonstrate how a BIOS-based x86-machine can boot up an operating system using the folowing steps:
+- reading mbr from disk
+- initializing basic text-output
+- reading the os-kernel from disk into memory
+- setting up the GDT (RAM layout)
+- switching to 32 BIT protected mode
+- executing the loaded kernel, effetively handing over control to code that ist written in a high-level programming language
+- provide video-output using high-level code, as BIOS-calls are no longer useable in protected mode
+
+For a more feature-rich version of example-os you may look
+here: [FrOS -fork](https://github.com/derco0n/FrOS)
+or here: [FrOS - origin](https://github.com/FRosner/FrOS)
+ 
+
 
 ## Files
 - boot
